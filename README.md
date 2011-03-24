@@ -1,41 +1,42 @@
 Paypal Adaptive Payments Library for ActiveMerchant
+====================================================
 
-Supports payments, preapprovals, refunds and currency conversions
+Suporta pagamentos, pre-aprovação, reembolso e conversão de moedas.
 
-Requirements:
-
+Requisitos
+--------------
   .Rails 3.0
   .Json
   .Builder
   .ActiveMerchant 1.9.x
 
-to install
-
-    git clone https://github.com/varsh/paypal_adaptive_gateway.git or download from https://github.com/varsh/paypal_adaptive_gateway
-    cd <path to root of downloaded patch>
+Instalando
+--------------
+    git clone https://github.com/varsh/paypal_adaptive_gateway.git
+    cd paypal_adaptive_gateway
     rails <Path to active merchant library> ex: "C:\Ruby187\lib\ruby\gems\1.8\gems\activemerchant-1.9.1"
   
-to use
-
-  in application_controller.rb
+Usando
+------------------
+  no application_controller.rb
   
     def gateway
       @gateway ||= PaypalAdaptivePaymentGateway.new(
-       :login => 'your_email',
-       :password => 'your_password',
-       :signature => ' your_signature',
-       :appid => 'your_app_id'
+       :login => 'seu_email',
+       :password => 'sua_senha',
+       :signature => ' sua_signature',
+       :appid => 'seu_appID'
       )
     end
   
-  In the payment process:
+  No processo de pagamento:
   
     #for chained payments
     def checkout
-      recipients = [{:email => 'receiver_email',
+      recipients = [{:email => 'email_recebedor',
                      :amount => some_amount,
                      :primary => true},
-                    {:email => 'receiver_email',
+                    {:email => 'email_recebedor',
                      :amount => recipient_amount,
                      :primary => false}
                      ]
@@ -81,4 +82,3 @@ In the cancel preapproval process:
   to debug
   
     use either gateway.debug or response.debug this gives you the json response, the xml sent and the url it was posted to. 
-  
