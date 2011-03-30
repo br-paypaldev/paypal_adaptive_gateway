@@ -290,6 +290,7 @@ module ActiveMerchant #:nodoc:
         request.content_type = 'text/xml'
         server = Net::HTTP.new(@url.host, 443)
         server.use_ssl = true
+        server.verify_mode = OpenSSL::SSL::VERIFY_NONE
         server.start { |http| http.request(request) }.body
       end
       
