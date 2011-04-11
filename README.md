@@ -64,16 +64,16 @@ Usando
       )
     
   No processo de aprovação prévia:
-response = gateway.preapprove_payment(
-    :return_url => "returnURL",
-    :cancel_url => "cancelURL",
-    :senderEmail =>"email address of sender",
-    :start_date =>"starting date",
-    :end_date =>"ending date",
-    :currency_code =>"currency code",
-    :max_amount =>"maxTotalAmountOfAllPayments",
-    :maxNumberOfPayments =>"maxNumberOfPayments"
-      )
+    response = gateway.preapprove_payment(
+        :return_url => "returnURL",
+        :cancel_url => "cancelURL",
+        :senderEmail =>"email address of sender",
+        :start_date =>"starting date",
+        :end_date =>"ending date",
+        :currency_code =>"currency code",
+        :max_amount =>"maxTotalAmountOfAllPayments",
+        :maxNumberOfPayments =>"maxNumberOfPayments"
+    )
 
   No processo de cancelamento de aprovação prévia:
 	response = gateway.cancel_preapproval(
