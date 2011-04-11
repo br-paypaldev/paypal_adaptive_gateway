@@ -51,7 +51,7 @@ Usando
     
     set the :primary flag to false for each recipient for a split payment
 
-In the Refund  process:
+  No processo de reembolso:
     recipients = [{:email => params[:receiveremail_0],
                      :amount => params[:amount_0]}
                      ]
@@ -63,7 +63,7 @@ In the Refund  process:
         :receiver_list => recipients
       )
     
-In the preapproval process:
+  No processo de aprovação prévia:
 response = gateway.preapprove_payment(
     :return_url => "returnURL",
     :cancel_url => "cancelURL",
@@ -75,10 +75,11 @@ response = gateway.preapprove_payment(
     :maxNumberOfPayments =>"maxNumberOfPayments"
       )
 
-In the cancel preapproval process:
+  No processo de cancelamento de aprovação prévia:
 	response = gateway.cancel_preapproval(
 	:preapproval_key =>"preapprovalkey"
       )
-  to debug
+
+  para debugar
   
-    use either gateway.debug or response.debug this gives you the json response, the xml sent and the url it was posted to. 
+    utilize tanto o gateway.debug quanto o response.debug, isso lhe dará a resposta JSON, o XML enviado e a URL que foi postado.
